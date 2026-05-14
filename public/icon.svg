@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f1a"/>
+    </radialGradient>
+    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="outerGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid lines for game feel -->
+  <g opacity="0.06" stroke="#7c3aed" stroke-width="1">
+    <line x1="0" y1="128" x2="512" y2="128"/>
+    <line x1="0" y1="256" x2="512" y2="256"/>
+    <line x1="0" y1="384" x2="512" y2="384"/>
+    <line x1="128" y1="0" x2="128" y2="512"/>
+    <line x1="256" y1="0" x2="256" y2="512"/>
+    <line x1="384" y1="0" x2="384" y2="512"/>
+  </g>
+
+  <!-- Outer ring glow -->
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#7c3aed" stroke-width="2" opacity="0.3" filter="url(#outerGlow)"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
+
+  <!-- Dumbbell bar -->
+  <rect x="156" y="240" width="200" height="32" rx="16" fill="url(#boltGrad)" filter="url(#glow)" opacity="0.95"/>
+
+  <!-- Left weight plates -->
+  <rect x="108" y="210" width="28" height="92" rx="10" fill="url(#boltGrad)" filter="url(#glow)"/>
+  <rect x="128" y="198" width="28" height="116" rx="10" fill="url(#boltGrad)" filter="url(#glow)" opacity="0.85"/>
+
+  <!-- Right weight plates -->
+  <rect x="376" y="210" width="28" height="92" rx="10" fill="url(#boltGrad)" filter="url(#glow)"/>
+  <rect x="356" y="198" width="28" height="116" rx="10" fill="url(#boltGrad)" filter="url(#glow)" opacity="0.85"/>
+
+  <!-- Lightning bolt overlay (center) -->
+  <polygon
+    points="272,148 232,268 258,268 240,364 296,228 266,228 290,148"
+    fill="#f59e0b"
+    filter="url(#glow)"
+    opacity="0.95"
+  />
+
+  <!-- Gold shimmer on bolt -->
+  <polygon
+    points="272,148 245,245 258,245 240,320 282,210 266,210 284,148"
+    fill="#fbbf24"
+    opacity="0.6"
+  />
+</svg>
